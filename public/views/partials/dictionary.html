@@ -1,0 +1,49 @@
+<div class="col-md-10 col-md-offset-1">
+
+	<div class="row">
+		<div class="col-sm-6">
+			<h4>Explore the dictionary</h4>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="input-group">
+				<input ng-keyup="filterWords(filter)" type="text" class="form-control" ng-model="filter" placeholder="Search" id="search-query-3">
+				<span class="input-group-addon">
+				   	<span class="fui-search"></span>
+				</span>
+			</div>
+
+	
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<table class="table table-striped dictionary-tbl">
+				<thead>
+					<tr>
+						<th>English</th>
+						<th>Spanish</th>
+						<th class="hidden-xs">Type</th>
+						<th class="hidden-xs">Date added</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="(key, word) in words">
+						<td>{{ word.eng }}</td>
+						<td>{{ word.esp }}</td>
+						<td class="hidden-xs">{{ word.type }}</td>
+						<td class="hidden-xs">{{ word.date_created | date:'dd MMM yy' }}</td>
+						<td>
+						<button ng-click="removeWord(word._id)" class="btn btn-default dict-icon hidden-xs"><span class="fui-trash"></span></button>
+
+						<button ng-click="toggleRevisionList(key, word)" ng-class="word.revision_list==true ? 'btn btn-warning dict-icon' : 'btn btn-default dict-icon'"><span class="fui-star-2"></span></button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+

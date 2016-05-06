@@ -1,0 +1,58 @@
+/*** Mixins ***/
+body {
+  background-color: #EEE;
+  /* For browsers that do not support gradients */
+  background-color: -webkit-linear-gradient(#EEE, #FFF);
+  /* For Safari 5.1 to 6.0 */
+  background-color: -o-linear-gradient(#EEE, #FFF);
+  /* For Opera 11.1 to 12.0 */
+  background-color: -moz-linear-gradient(#EEE, #FFF);
+  /* For Firefox 3.6 to 15 */
+  background-color: linear-gradient(#EEE, #FFF); }
+  body select, body textarea, body input[type="text"], body input[type="password"], body input[type="datetime"], body input[type="datetime-local"], body input[type="date"], body input[type="month"], body input[type="time"], body input[type="week"], body input[type="number"], body input[type="email"], body input[type="url"], body input[type="search"], body input[type="tel"], body input[type="color"] {
+    font-size: 16px; }
+
+.play-box .eng {
+  height: 200px; }
+  .play-box .eng h3 {
+    font-size: 60px; }
+.play-box .play-controls {
+  margin-top: 5%; }
+
+.play-filters .panel-group {
+  margin-top: 40px; }
+
+.dict-icon {
+  height: 30px;
+  width: 30px;
+  padding: 0;
+  float: right;
+  margin-right: 5px; }
+
+.omes-center {
+  text-align: center; }
+
+.omes-margin {
+  margin-top: 2%; }
+
+/* screen size until 500px */
+@media all and (max-width: 500px) {
+  .navbar {
+    margin-bottom: 0px; }
+
+  .dictionary-tbl {
+    margin-top: 10px;
+    font-size: 0.8em; }
+
+  h4 {
+    text-align: center; }
+
+  .play-box .eng {
+    height: 170px !important; }
+    .play-box .eng h3 {
+      font-size: 2em !important; }
+
+  .play-filters {
+    margin-top: 40px; } }
+
+/*# sourceMappingURL=styles.css.map */

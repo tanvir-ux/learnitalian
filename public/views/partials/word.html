@@ -1,0 +1,43 @@
+<div class="col-md-10 col-md-offset-1">
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<form name="myForm">
+				<h4>Add some new words</h4>
+
+				<div class="form-group" ng-class="{'has-error': engError && myForm.eng.$invalid}">
+				    <input type="text" name="eng" ng-model="word.eng" class="form-control input-lg" placeholder="English" required>
+				</div>
+
+				<div class="form-group" ng-class="{'has-error': espError && myForm.esp.$invalid}">
+				    <input type="text" name="esp" ng-model="word.esp" class="form-control input-lg" placeholder="Spanish" required>
+				</div>
+
+				<div class="form-group">
+					<select class="form-control select select-primary select-block mbl" ng-model="wordType" ng-options="x for x in types"></select>
+				</div>
+
+				<div class="form-group">
+					<div class="checkbox"><label><input type="checkbox" ng-model="word.revision_list"> Revision list</label></div>
+				</div>
+
+				<div class="form-group">
+					<button type="submit" ng-click="addWord()" class="btn btn-primary btn-hg btn-block">Add Word</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row" ng-model="latestWord">
+		<div class="col-md-6 col-md-offset-3 omes-margin">
+			<div class="alert omes-center" ng-class="wordAlert ? 'alert-success' : 'alert-danger'" ng-hide="showLatest" role="alert" ng-model="alert">{{ alert }}</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		// Style Flat-ui select element
+		$("select").select2({dropdownCssClass: 'dropdown-inverse'});
+
+		$(':checkbox').radiocheck();
+	});
+</script>

@@ -1,0 +1,56 @@
+/*** Mixins ***/
+@mixin border-radius($radius) { 
+	-webkit-border-radius: $radius; 
+	-moz-border-radius: $radius; 
+	-ms-border-radius: $radius; 
+	border-radius: $radius; }
+@mixin gradient($c1, $c2) { background-color: $c1; /* For browsers that do not support gradients */
+    background-color: -webkit-linear-gradient($c1, $c2); /* For Safari 5.1 to 6.0 */
+    background-color: -o-linear-gradient($c1, $c2); /* For Opera 11.1 to 12.0 */
+    background-color: -moz-linear-gradient($c1, $c2); /* For Firefox 3.6 to 15 */
+    background-color: linear-gradient($c1, $c2); }
+
+html {
+
+}
+body {
+	// Fixes autofocus issue on mobile version (Test)
+	select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] { font-size: 16px; }
+    @include gradient(#EEE,#FFF);
+}
+
+// Play
+.play-box {
+	.eng { height: 200px; 
+		h3 { font-size: 60px; }
+	}
+	.play-controls { margin-top: 5%; }
+}
+
+.play-filters {	
+	.panel-group { margin-top: 40px; }
+}
+
+// Dictionary
+.dict-icon { height: 30px; width: 30px; padding: 0; float: right; margin-right:5px; }
+
+
+// Helpers
+.omes-center { text-align: center; }
+.omes-margin { margin-top: 2%; }
+
+
+/* screen size until 500px */
+@media all and (max-width: 500px) { 
+	.navbar { margin-bottom: 0px; }
+	.dictionary-tbl { margin-top: 10px; font-size: 0.8em; }
+	h4 { text-align: center; }
+	//.play-box h3 { font-size: 2em; }
+	.play-box {
+		.eng { height: 170px !important;  
+			h3 { font-size: 2em !important; }
+		}
+	}
+	.play-filters { margin-top: 40px; }
+}
+
